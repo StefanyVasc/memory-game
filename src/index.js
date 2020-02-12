@@ -4,11 +4,11 @@ const $root = document.querySelector("#root");
 
 /* criando o article */
 const $memoryCard = document.createElement("article");
-const $memoryCardReveal = document.createElement("article");
+const $memoryCardFront = document.createElement("article");
 
 /* outra forma de adicionar elementos diretamente */
 
-const $icon = `
+const $iconCollab = `
   <img 
     class='icon' 
     src='img/icon-collabcode.png' 
@@ -16,17 +16,21 @@ const $icon = `
   />
 `;
 
-const $iconReveal = `<img class="icon -ball" src="img/icon-c.png" alt="icone c" />`;
+const $iconFront = `
+    <img class="icon" 
+    src="img/icon-c.png" 
+    alt="icone de um livro da linguagem C++" 
+  />
+`;
 
 /* adicionando a classe para poder ganhar o estilo do css */
 $memoryCard.classList.add("memory-card");
-$memoryCardReveal.classList.add("memory-card", "-reveal");
+$memoryCardFront.classList.add("memory-card", "-front");
 
 /* colocando o elemento article dentro do root
-
-insertBefore(elemento que quero IntersectionObserver, antes de qual elemento) */
+insertBefore(elemento que quero adicionar, antes de qual elemento) */
 $root.insertBefore($memoryCard, null);
-$memoryCard.insertAdjacentHTML("afterbegin", $icon);
+$memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
 
-$root.insertBefore($memoryCardReveal, $memoryCard);
-$memoryCardReveal.insertAdjacentHTML("afterbegin", $iconReveal);
+$root.insertBefore($memoryCardFront, $memoryCard);
+$memoryCardFront.insertAdjacentHTML("afterbegin", $iconFront);
