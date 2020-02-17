@@ -1,7 +1,0 @@
-.root {
-  height: 970px;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}

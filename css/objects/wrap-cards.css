@@ -1,0 +1,13 @@
+/* responsabilidade: envolver os cards todos os elementos estarão dentro dela e não 
+diretamente na root,agora qem é desenhado diretamente na root é a section da wrap-cards */
+
+.wrap-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.wrap-cards > .memory-card {
+  margin-bottom: 10px;
+}
