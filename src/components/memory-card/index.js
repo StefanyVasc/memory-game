@@ -13,6 +13,11 @@ function createMemoryCard() {
   $wrapCards.insertBefore($memoryCard, null);
 
   $memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+
+  $memoryCard.addEventListener("click", x => {
+    console.log("clicou no Card frente");
+    event.stopPropagation();
+  });
 }
 
 function createMemoryCardFront() {
@@ -31,4 +36,9 @@ function createMemoryCardFront() {
   $wrapCards.insertBefore($memoryCardFront, null);
 
   $memoryCardFront.insertAdjacentHTML("afterbegin", $iconFront);
+
+  $memoryCardFront.addEventListener("click", x => {
+    console.log("clicou no Card verso");
+    event.stopPropagation();
+  });
 }
