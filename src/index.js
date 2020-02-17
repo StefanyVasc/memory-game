@@ -6,16 +6,6 @@ const $root = document.querySelector("#root");
 
 const $memoryCardFront = document.createElement("article");
 
-/* const $memoryCard2 = document.createElement("article");
-const $memoryCard3 = document.createElement("article");
-const $memoryCard4 = document.createElement("article");
-const $memoryCard5 = document.createElement("article");
-const $memoryCard6 = document.createElement("article");
-const $memoryCard7 = document.createElement("article");
-const $memoryCard8 = document.createElement("article");
-const $memoryCard9 = document.createElement("article");
-const $memoryCard10 = document.createElement("article");
-const $memoryCard11 = document.createElement("article"); */
 /* outra forma de adicionar elementos diretamente */
 
 const $iconCollab = `
