@@ -6,7 +6,8 @@ function createMemoryCard() {
       <img 
         src='img/icon-collabcode.png' 
         alt='Gueio mascote da CollabCode' 
-        class='icon' 
+        class='icon'
+        onClick= 'handleClick()' 
       />
     </article>
   `;
@@ -25,7 +26,8 @@ function createMemoryCardFront() {
       <img 
         class='icon' 
         src='img/icon-c.png' 
-        alt='icone de um livro da linguagem C++' 
+        alt='icone de um livro da linguagem C++'
+        onClick= 'handleClick()'  
       />
     </article>
   `;
@@ -34,4 +36,8 @@ function createMemoryCardFront() {
     console.log("clicou no Card verso");
     event.stopPropagation();
   }); */
+}
+
+function handleClick() {
+  console.log("card clicado");
 }
