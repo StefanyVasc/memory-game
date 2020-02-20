@@ -1,4 +1,4 @@
-function createMemoryCard() {
+const createMemoryCard = () => {
   /* as linhas abaixo simplificam a criação do article, 
   inclusão da classe do article e criação icone */
   const $memoryCard = `
@@ -18,9 +18,9 @@ function createMemoryCard() {
     console.log("clicou no Card frente");
     event.stopPropagation();
   }); */
-}
+};
 
-function createMemoryCardFront() {
+const createMemoryCardFront = () => {
   const $memoryCard = `
     <article class= "memory-card -front">
       <img 
@@ -36,7 +36,7 @@ function createMemoryCardFront() {
     console.log("clicou no Card verso");
     event.stopPropagation();
   }); */
-}
+};
 
 function handleClick() {
   console.log("card clicado");
