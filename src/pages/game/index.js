@@ -6,7 +6,7 @@ const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
 const $memoryCard = createMemoryCard();
-const $memoryCardFront = createMemoryCardFront();
+const $memoryCardFront = createMemoryCard("-front");
 
 /* inserindo primeiro o wrapper 
   - 1ª sempre pegar o #root
