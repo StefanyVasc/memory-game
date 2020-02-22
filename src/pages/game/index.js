@@ -15,19 +15,36 @@ const $memoryCard = createMemoryCard(
   "img/icon-collabcode.png",
   "Gueio mascote da collabCode"
 );
-const $memoryCardFront = createMemoryCard(
+const $memoryCardFrontC = createMemoryCard(
   "img/icon-c.png",
   "Icone de um livro da linguagem C++",
   "-front"
 );
+const $memoryCardFrontPHP = createMemoryCard(
+  "img/icon-php.png",
+  "Icone de um livro da linguagem PHP",
+  "-front"
+);
 
+const $memoryCardFrontJava = createMemoryCard(
+  "img/icon-java.png",
+  "Icone de um livro da linguagem Java",
+  "-front"
+);
+
+const $memoryCardFrontJs = createMemoryCard(
+  "img/icon-js.png",
+  "Icone de um livro da linguagem JavaScript",
+  "-front"
+);
+
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontPHP);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJs);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontPHP);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
 
 $root.insertAdjacentElement("beforeend", $cardsWrapper); //com isso ele deve aparecer dentro da div
