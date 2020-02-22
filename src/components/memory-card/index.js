@@ -1,35 +1,16 @@
-const createMemoryCard = (classModifier = "") => {
-  /* as linhas abaixo simplificam a criação do article, 
-  inclusão da classe do article e criação icone */
+/* component burro = component stateless
+ele não tem informações de estado, não guarda dados, 
+só guarda estrutura layout e comportamento.
+é escalável*/
+const createMemoryCard = (src, alt, nameClass) => `
+  <article class= "memory-card ${nameClass}">
+    <img 
+      class='icon' 
+      src='${src}' 
+      alt='${alt}'
+      onClick= 'handleClick()'  
+    />
+  </article>
+`;
 
-  if (classModifier == "-front") {
-    const $memoryCardFront = `
-      <article class= "memory-card -front">
-        <img 
-          class='icon' 
-          src='img/icon-c.png' 
-          alt='icone de um livro da linguagem C++'
-          onClick= 'handleClick()'  
-        />
-      </article>
-    `;
-    return $memoryCardFront;
-  } else {
-    const $memoryCard = `
-      <article class= "memory-card">
-        <img 
-          src='img/icon-collabcode.png' 
-          alt='Gueio mascote da CollabCode' 
-          class='icon'
-          onClick= 'handleClick()' 
-        />
-      </article>
-    `;
-
-    return $memoryCard;
-  }
-};
-
-function handleClick() {
-  console.log("card clicado");
-}
+const handleClick = () => console.log("card clicado");
