@@ -2,12 +2,12 @@
 ele não tem informações de estado, não guarda dados, 
 só guarda estrutura layout e comportamento.
 é escalável*/
-const createMemoryCard = card => `
-  <article class= "memory-card ${card.nameClass}">
+const createMemoryCard = ({ nameClass, src, alt }) => `
+  <article class= "memory-card ${nameClass}">
     <img 
       class='icon' 
-      src='${card.src}' 
-      alt='${card.alt}'
+      src='${src}' 
+      alt='${alt}'
       onClick= 'handleClick()'  
     />
   </article>
