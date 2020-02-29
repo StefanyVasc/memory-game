@@ -43,7 +43,7 @@ const $memoryCardFrontJs = createMemoryCard({
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontPHP);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
-$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJs);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJs);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontPHP);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
