@@ -2,7 +2,10 @@ const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
 
-const $memoryCard = createMemoryCard({
+const createMemoryCard = memoryCard();
+/* createMemoryCard é o return da arrow function do memoryCard */
+
+const $memoryCardBack = createMemoryCard({
   src: "img/icon-collabcode.png",
   alt: "Gueio mascote da collabCode"
 });
@@ -40,4 +43,4 @@ $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
 
-$root.insertAdjacentElement("beforeend", $cardsWrapper); //com isso ele deve aparecer dentro da div
+$root.insertAdjacentElement("beforeend", $cardsWrapper);

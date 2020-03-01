@@ -1,22 +1,4 @@
-/* component burro = component stateless
-ele não tem informações de estado, não guarda dados, 
-só guarda estrutura layout e comportamento.
-é escalável*/
-const createMemoryCard = ({ nameClass, src, alt }) => {
-  cardStyle();
-  return `
-    <article class= "memory-card ${nameClass}">
-      <img 
-        class='icon' 
-        src='${src}' 
-        alt='${alt}'
-        onClick= 'handleClick()'  
-      />
-    </article>
-  `;
-};
-
-const cardStyle = () => {
+function memoryCard() {
   const $head = document.querySelector("head");
   const $styleCard = document.createElement("style");
 
@@ -29,6 +11,7 @@ const cardStyle = () => {
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
       position: relative;
       cursor: pointer;
     }
@@ -58,7 +41,25 @@ const cardStyle = () => {
     
     }
   `;
+
   $head.insertBefore($styleCard, null);
-};
+
+  /*   
+o return da memorycard é associado a uma nova constante da page. Dai 
+só é aplicado o estilo uma unica vez e sempre que ele é chamado na page
+ele retorna apenas o conteudo do return. O estilo é inserido no momento
+de preparação para o memory card (page)
+*/
+  return ({ nameClass, src, alt }) => `
+      <article class= "memory-card ${nameClass}">
+        <img 
+          class='icon' 
+          src='${src}' 
+          alt='${alt}'
+          onClick= 'handleClick()'  
+        />
+      </article>
+    `;
+}
 
 const handleClick = () => console.log("card clicado");
