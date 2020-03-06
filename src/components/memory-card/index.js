@@ -1,4 +1,4 @@
-function memoryCard() {
+const memoryCard = () => {
   const $head = document.querySelector("head");
   const $styleCard = document.createElement("style");
 
@@ -50,16 +50,50 @@ só é aplicado o estilo uma unica vez e sempre que ele é chamado na page
 ele retorna apenas o conteudo do return. O estilo é inserido no momento
 de preparação para o memory card (page)
 */
+
   return ({ nameClass, src, alt }) => `
-      <article class= "memory-card ${nameClass}">
+      <article class= "memory-card ${nameClass}" onClick='handleClick(this)' >
         <img 
+ 
           class='icon' 
           src='${src}' 
           alt='${alt}'
-          onClick= 'handleClick()'  
+          
+           
         />
       </article>
     `;
-}
+};
 
-const handleClick = () => console.log("card clicado");
+const handleClick = $cardClear => {
+  const $imgIcon = $cardClear.childNodes;
+
+  $cardClear.classList.toggle("-front");
+
+  if ($cardClear.classList.contains("-front")) {
+    $imgIcon[1].setAttribute("src", "img/icon-woman.png");
+    console.log($cardClear.classList);
+  } else {
+    $imgIcon[1].setAttribute("src", "img/icon-collabcode.png");
+  }
+};
+
+/* const handleClick = $article => {
+  const $img = document.getElementById("img-icon");
+
+  console.log("card clicado", $article, $img);
+
+  if ($article.classList.contains("-front")) {
+    $article.classList.remove("-front");
+    $img.src = "img/icon-collabcode.png";
+  } else {
+    $article.classList.add("-front");
+  }
+
+  $article.classList.toggle("-front");
+  console.log($article.classList);
+
+  const filhos = $article.childNodes;
+
+  console.log(filhos[1]);
+}; */
