@@ -12,26 +12,22 @@ const $memoryCardBack = createMemoryCard({
 
 const $memoryCardFrontC = createMemoryCard({
   src: "img/icon-c.png",
-  alt: "Icone de um livro da linguagem C++",
-  nameClass: "-front"
+  alt: "Icone de um livro da linguagem C++"
 });
 
 const $memoryCardFrontPHP = createMemoryCard({
   src: "img/icon-php.png",
-  alt: "Icone de um livro da linguagem PHP",
-  nameClass: "-front"
+  alt: "Icone de um livro da linguagem PHP"
 });
 
 const $memoryCardFrontJava = createMemoryCard({
   src: "img/icon-java.png",
-  alt: "Icone de um livro da linguagem Java",
-  nameClass: "-front"
+  alt: "Icone de um livro da linguagem Java"
 });
 
 const $memoryCardFrontJs = createMemoryCard({
   src: "img/icon-js.png",
-  alt: "Icone de um livro da linguagem JavaScript",
-  nameClass: "-front"
+  alt: "Icone de um livro da linguagem JavaScript"
 });
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontPHP);
