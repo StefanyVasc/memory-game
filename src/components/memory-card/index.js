@@ -91,25 +91,21 @@ de preparação para o memory card (page)
 };
 
 const handleClick = $component => {
-  $component.classList.toggle("-active");
-
-  const allComponent = document.querySelectorAll(".-active");
-
-  if (allComponent.length == 3) {
-    allComponent.forEach(e => {
-      e.classList.remove("-active");
-    });
+  if (qtdActiveMemoryCard < 2) {
+    $component.classList.toggle("-active");
   }
-  if (allComponent.length == 2) {
-    const elemento1 = allComponent[0];
-    const elemento2 = allComponent[1];
 
+  if (qtdActiveMemoryCard === 1) {
     setTimeout(() => {
-      console.log("passou 3s");
-      elemento1.classList.remove("-active");
-      elemento2.classList.remove("-active");
-    }, 3000);
+      const $activeMemoryCards = document.querySelectorAll(
+        ".memory-card.-active"
+      );
 
-    $component.classList.add("active");
+      $activeMemoryCards.forEach($memoryCard => {
+        $memoryCard.classList.remove("-active");
+      });
+
+      qtdActiveMemoryCard = 0;
+    }, 1200);
   }
 };
