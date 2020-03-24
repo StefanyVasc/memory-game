@@ -94,35 +94,19 @@ de preparação para o memory card (page)
 };
 
 const handleClick = $component => {
-  console.log(qtdActiveMemoryCard);
+  if (!$component.classList.contains("-active")) {
+    if (qtdActiveMemoryCard < 2) {
+      $component.classList.toggle("-active");
+    }
 
-  if (qtdActiveMemoryCard < 2) {
-    $component.classList.toggle("-active");
-  }
-
-  if (qtdActiveMemoryCard === 1) {
-    const $memoryCards = document.querySelectorAll(".memory-card.-active");
-
-    const cardOne = $memoryCards[0]
-      .querySelector(".-front .icon")
-      .getAttribute("src");
-    const cardTwo = $memoryCards[1]
-      .querySelector(".-front .icon")
-      .getAttribute("src");
-    console.log($memoryCards);
-    if (cardOne === cardTwo) {
-      pontos++;
-      $memoryCards.forEach($card => {
-        $card.classList.add("-hit");
-        $card.classList.remove("-active");
-      });
-      console.log("Pontos:", pontos);
-    } else {
+    if (qtdActiveMemoryCard === 1) {
       setTimeout(() => {
-        const $activeCards = document.querySelectorAll(".memory-card.-active");
+        const $activeMemoryCard = document.querySelectorAll(
+          ".memory-card.-active"
+        );
 
-        $activeCards.forEach($card => {
-          $card.classList.remove("-active");
+        $activeMemoryCard.forEach($memoryCard => {
+          $memoryCard.classList.remove("-active");
         });
         qtdActiveMemoryCard = 0;
       }, 1200);
