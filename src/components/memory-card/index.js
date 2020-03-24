@@ -77,7 +77,7 @@ de preparação para o memory card (page)
           <img        
             src='${src}' 
             alt='${alt}'
-            class='icon -iconfront'
+            class='icon'
             
           />      
         </article>
@@ -100,6 +100,17 @@ const handleClick = $component => {
     }
 
     if (qtdActiveMemoryCard === 1) {
+      const $memoryCards = document.querySelectorAll(".memory-card.-active");
+
+      if (
+        $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ===
+        $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
+      ) {
+        console.log("acertou");
+      } else {
+        console.log("errou");
+      }
+
       setTimeout(() => {
         const $activeMemoryCard = document.querySelectorAll(
           ".memory-card.-active"
