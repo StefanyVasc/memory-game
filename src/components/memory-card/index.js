@@ -26,12 +26,12 @@ const memoryCard = () => {
 
 
     .memory-card.-active .card,
-    .memory-card.-hit .card{
+    .memory-card.-score .card{
       display: none;
     }
 
     .memory-card.-active .card.-front,
-    .memory-card.-hit .card.-front{
+    .memory-card.-score .card.-front{
       display: flex;
     }
     
@@ -92,7 +92,7 @@ de preparação para o memory card (page)
       </div>
     `;
 };
-
+let score = 0;
 const handleClick = $component => {
   if (!$component.classList.contains("-active")) {
     if (qtdActiveMemoryCard < 2) {
@@ -106,21 +106,26 @@ const handleClick = $component => {
         $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ===
         $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
       ) {
-        console.log("acertou");
-      } else {
-        console.log("errou");
-      }
-
-      setTimeout(() => {
-        const $activeMemoryCard = document.querySelectorAll(
-          ".memory-card.-active"
-        );
-
-        $activeMemoryCard.forEach($memoryCard => {
+        score++;
+        console.log("Score:", score);
+        $memoryCards.forEach($memoryCard => {
+          $memoryCard.classList.add("-score");
           $memoryCard.classList.remove("-active");
         });
-        qtdActiveMemoryCard = 0;
-      }, 1200);
+      } else {
+        console.log("Score:", score);
+        setTimeout(() => {
+          const $activeMemoryCard = document.querySelectorAll(
+            ".memory-card.-active"
+          );
+
+          $activeMemoryCard.forEach($memoryCard => {
+            $memoryCard.classList.remove("-active");
+          });
+
+          qtdActiveMemoryCard = 0;
+        }, 1200);
+      }
     }
   }
 };
