@@ -85,35 +85,36 @@ const memoryCard = () => {
     `;
 };
 
-const flipCard = ($card) => {
+function activeMemoryCard($component) {
   if (qtdActiveMemoryCard < 2) {
-    $card.classList.toggle("-active");
+    $component.classList.add("-active");
   }
-};
+}
 
-const activeFlip = () => {
-  const $memoryCards = document.querySelectorAll(".memory-card.-active");
-
+function checkingIfRight() {
   if (qtdActiveMemoryCard === 1) {
-    const firstCard = $memoryCards[0]
+    const $activeMemoryCards = document.querySelectorAll(
+      ".memory-card.-active"
+    );
+
+    const firstCard = $activeMemoryCards[0]
       .querySelector(".-front .icon")
       .getAttribute("src");
-    const secondCard = $memoryCards[1]
+    const secondCard = $activeMemoryCards[1]
       .querySelector(".-front .icon")
       .getAttribute("src");
 
     if (firstCard === secondCard) {
-      score++;
-      console.log("Score:", score);
+      store.score++;
+      console.log("Score:", store.score);
 
-      $memoryCards.forEach(($memoryCard) => {
+      $activeMemoryCards.forEach(($memoryCard) => {
         $memoryCard.classList.add("-score");
         $memoryCard.classList.remove("-active");
       });
     } else {
-      console.log("Score:", score);
       setTimeout(() => {
-        $memoryCards.forEach(($memoryCard) => {
+        $activeMemoryCards.forEach(($memoryCard) => {
           $memoryCard.classList.remove("-active");
         });
 
@@ -121,11 +122,11 @@ const activeFlip = () => {
       }, 1200);
     }
   }
-};
+}
 
-const handleClick = ($card) => {
-  if (!$card.classList.contains("-active")) {
-    flipCard($card);
-    activeFlip();
+const handleClick = ($component) => {
+  if (!$component.classList.contains("-active")) {
+    activeMemoryCard($component);
+    checkingIfRight();
   }
 };
