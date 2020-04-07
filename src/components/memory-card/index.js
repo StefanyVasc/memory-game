@@ -1,4 +1,3 @@
-let pontos = 0;
 const memoryCard = () => {
   const $head = document.querySelector("head");
   const $styleCard = document.createElement("style");
@@ -64,13 +63,6 @@ const memoryCard = () => {
 
   $head.insertBefore($styleCard, null);
 
-  /*   
-o return da memorycard é associado a uma nova constante da page. Dai 
-só é aplicado o estilo uma unica vez e sempre que ele é chamado na page
-ele retorna apenas o conteudo do return. O estilo é inserido no momento
-de preparação para o memory card (page)
-*/
-
   return ({ src, alt }) => `
       <div class="memory-card" onClick='handleClick(this)'>
         <article class= "card -front">
@@ -92,40 +84,48 @@ de preparação para o memory card (page)
       </div>
     `;
 };
-let score = 0;
-const handleClick = $component => {
-  if (!$component.classList.contains("-active")) {
-    if (qtdActiveMemoryCard < 2) {
-      $component.classList.toggle("-active");
-    }
 
-    if (qtdActiveMemoryCard === 1) {
-      const $memoryCards = document.querySelectorAll(".memory-card.-active");
+const flipCard = ($card) => {
+  if (qtdActiveMemoryCard < 2) {
+    $card.classList.toggle("-active");
+  }
+};
 
-      if (
-        $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ===
-        $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
-      ) {
-        score++;
-        console.log("Score:", score);
-        $memoryCards.forEach($memoryCard => {
-          $memoryCard.classList.add("-score");
+const activeFlip = () => {
+  const $memoryCards = document.querySelectorAll(".memory-card.-active");
+
+  if (qtdActiveMemoryCard === 1) {
+    const firstCard = $memoryCards[0]
+      .querySelector(".-front .icon")
+      .getAttribute("src");
+    const secondCard = $memoryCards[1]
+      .querySelector(".-front .icon")
+      .getAttribute("src");
+
+    if (firstCard === secondCard) {
+      score++;
+      console.log("Score:", score);
+
+      $memoryCards.forEach(($memoryCard) => {
+        $memoryCard.classList.add("-score");
+        $memoryCard.classList.remove("-active");
+      });
+    } else {
+      console.log("Score:", score);
+      setTimeout(() => {
+        $memoryCards.forEach(($memoryCard) => {
           $memoryCard.classList.remove("-active");
         });
-      } else {
-        console.log("Score:", score);
-        setTimeout(() => {
-          const $activeMemoryCard = document.querySelectorAll(
-            ".memory-card.-active"
-          );
 
-          $activeMemoryCard.forEach($memoryCard => {
-            $memoryCard.classList.remove("-active");
-          });
-
-          qtdActiveMemoryCard = 0;
-        }, 1200);
-      }
+        qtdActiveMemoryCard = 0;
+      }, 1200);
     }
+  }
+};
+
+const handleClick = ($card) => {
+  if (!$card.classList.contains("-active")) {
+    flipCard($card);
+    activeFlip();
   }
 };
