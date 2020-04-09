@@ -1,9 +1,11 @@
+/* tudo que está dentro do page não pode ser acessado do lado de fora... 
+o page que consome os outros arquivos */
 (function () {
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
 
-  const createMemoryCard = memoryCard();
+  const createMemoryCard = memoryCard.createNewCard();
   /* createMemoryCard é o return da arrow function do memoryCard */
 
   const $memoryCardBack = createMemoryCard({
