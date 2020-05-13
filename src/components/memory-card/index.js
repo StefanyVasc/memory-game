@@ -1,4 +1,3 @@
-// para conseguir acecssar a função que tecnicamente não teria nome associar a uma variável
 const memoryCard = (function () {
   const memoryCard = () => {
     const $head = document.querySelector("head");
@@ -87,6 +86,13 @@ const memoryCard = (function () {
     `;
   };
 
+  const handleClick = ($component) => {
+    if (!$component.classList.contains("-active")) {
+      activeMemoryCard($component);
+      checkingIfRight();
+    }
+  };
+
   function activeMemoryCard($component) {
     if (qtdActiveMemoryCard < 2) {
       $component.classList.add("-active");
@@ -125,13 +131,6 @@ const memoryCard = (function () {
       }
     }
   }
-
-  const handleClick = ($component) => {
-    if (!$component.classList.contains("-active")) {
-      activeMemoryCard($component);
-      checkingIfRight();
-    }
-  };
 
   return {
     createNewCard: memoryCard,
