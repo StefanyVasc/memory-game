@@ -4,9 +4,10 @@ o page que consome os outros arquivos */
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
-
   const createMemoryCard = memoryCard.createNewCard();
-  /* createMemoryCard é o return da arrow function do memoryCard */
+  /* createMemoryCard é o return da IIFE do memoryCard */
+
+  const $pointBar = pointBar.createNewBar();
 
   const $memoryCardBack = createMemoryCard({
     src: "img/icon-collabcode.png",
@@ -41,6 +42,8 @@ o page que consome os outros arquivos */
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
+
+  $root.insertAdjacentHTML("afterbegin", $pointBar);
 
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
 })();
