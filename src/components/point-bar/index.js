@@ -24,8 +24,8 @@ const pointBar = (function () {
     $head.insertBefore($style, null);
   };
 
-  module.scoreBar = () => {
-    const $counter = document.querySelector(".counter");
+  module.scoreBarCount = () => {
+    const $counter = document.querySelector(".point-bar > .counter");
     $counter.textContent = store.score;
   };
 
@@ -40,6 +40,6 @@ const pointBar = (function () {
 
   return {
     createNewBar: module.createBar,
-    scoreBar: module.scoreBar,
+    scoreBar: module.scoreBarCount,
   };
 })();

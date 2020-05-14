@@ -7,34 +7,26 @@ const fabStart = (function () {
 
     $style.textContent = `
       .fab {
-        background: #3a4042;
-        width: 70px;
-        height: 70px;
-        background-color: #3a4042;
-        border-radius: 100%;
-        border: none;
+        width: 100px;
+        height: 100px;
+        background-color: #ffdbd9;
+        border-radius: 50%;
+        border: 2px solid #3a4042;
         outline: none;
-        color: #FFF;
+        color: #3a4042 ;
         font-family: 'Balsamiq Sans', sans-sarif;
-        font-size: 18px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        transition:.3s;
-        z-index: 2;
-        position: fixed;
-        right: 140px;
+        font-size: 1.05em;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: absolute;
+        left: 50%;
         bottom: 20px;
-
+        transform: translateX(-50%);
+        cursor: pointer;
+        box-shadow: 0px 4px 8px #3c4244;
       }
 
-      .fab:focus {
-        transform:scale(1.1);
-        transform:rotate(45deg);
-      }
-
-      .fab:hover{
-        box-shadow: 0 6px 14px 0 #666;
-        transform: scale(1.05);
-      }
+      
     `;
     $head.insertBefore($style, null);
   };
@@ -42,7 +34,7 @@ const fabStart = (function () {
   module.createFab = () => {
     module._style();
     return `
-      <button class="fab"> Start</button>
+      <button class="fab">Start</button>
 
     `;
   };
