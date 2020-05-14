@@ -92,6 +92,7 @@ const memoryCard = (function () {
     if (!$component.classList.contains("-active")) {
       module._activeMemoryCard($component);
       module._checkingIfRight();
+      pointBar.scoreBar();
     }
   };
 
@@ -116,7 +117,6 @@ const memoryCard = (function () {
 
       if (firstCard === secondCard) {
         store.score++;
-        console.log("Score:", store.score);
 
         $activeMemoryCards.forEach(($memoryCard) => {
           $memoryCard.classList.add("-score");

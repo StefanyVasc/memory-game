@@ -16,7 +16,7 @@ const fabStart = (function () {
         outline: none;
         color: #FFF;
         font-family: 'Balsamiq Sans', sans-sarif;
-        font-size: 16px;
+        font-size: 18px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         transition:.3s;
         z-index: 2;

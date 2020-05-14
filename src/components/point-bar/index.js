@@ -4,6 +4,7 @@ const pointBar = (function () {
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
+
     $style.textContent = `
       .point-bar{
         height: 40px;
@@ -23,6 +24,11 @@ const pointBar = (function () {
     $head.insertBefore($style, null);
   };
 
+  module.scoreBar = () => {
+    const $counter = document.querySelector(".counter");
+    $counter.textContent = store.score;
+  };
+
   module.createBar = () => {
     module._style();
     return `
@@ -34,5 +40,6 @@ const pointBar = (function () {
 
   return {
     createNewBar: module.createBar,
+    scoreBar: module.scoreBar,
   };
 })();

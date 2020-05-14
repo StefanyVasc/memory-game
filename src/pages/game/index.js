@@ -44,6 +44,7 @@ o page que consome os outros arquivos */
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
+
   $root.insertAdjacentHTML("afterend", $fabStart);
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
