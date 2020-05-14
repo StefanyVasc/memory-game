@@ -9,6 +9,8 @@ o page que consome os outros arquivos */
 
   const $pointBar = pointBar.createNewBar();
 
+  const $fabStart = fabStart.createNewFabStart();
+
   const $memoryCardBack = createMemoryCard({
     src: "img/icon-collabcode.png",
     alt: "Gueio mascote da collabCode",
@@ -42,6 +44,7 @@ o page que consome os outros arquivos */
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontJava);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFrontC);
+  $root.insertAdjacentHTML("afterend", $fabStart);
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
 
