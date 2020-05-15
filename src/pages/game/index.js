@@ -11,6 +11,8 @@ o page que consome os outros arquivos */
 
   const $fabStart = fabStart.createNewFabStart();
 
+  const $layerStart = layerStart.createNewLayerStart();
+
   const $memoryCardFrontC = createMemoryCard({
     src: "img/icon-c.png",
     alt: "Icone de um livro da linguagem C++",
@@ -42,5 +44,7 @@ o page que consome os outros arquivos */
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
+
+  $root.insertAdjacentHTML("beforeend", $layerStart);
   $root.insertAdjacentHTML("beforeend", $fabStart);
 })();
