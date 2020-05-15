@@ -26,20 +26,35 @@ const fabStart = (function () {
         box-shadow: 0px 4px 8px #3c4244;
       }
 
+      .fab.-inative {
+        display: none;
+      }
+
       
     `;
+
     $head.insertBefore($style, null);
   };
 
+  module.handleClick = () => {
+    const $fab = document.querySelector(".fab");
+    const $layerFab = document.querySelector(".layer-start");
+
+    $fab.classList.add("-inative");
+    $layerFab.classList.add("-inative");
+  };
   module.createFab = () => {
     module._style();
+
     return `
-      <button class="fab">Start</button>
+      <button class="fab" onClick="fabStart.fabHandleClick()">Start</button>
+      
 
     `;
   };
 
   return {
     createNewFabStart: module.createFab,
+    fabHandleClick: module.handleClick,
   };
 })();

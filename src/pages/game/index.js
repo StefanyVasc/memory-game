@@ -9,6 +9,7 @@ o page que consome os outros arquivos */
 
   const $pointBar = pointBar.createNewBar();
 
+  /* const $fabButton = fabStart.createNewFabStart() */
   const $fabStart = fabStart.createNewFabStart();
 
   const $layerStart = layerStart.createNewLayerStart();

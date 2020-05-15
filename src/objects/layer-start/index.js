@@ -18,6 +18,10 @@ const layerStart = (function () {
         height: 100vh;
       }
 
+      .layer-start.-inative{
+        display:none;
+      }
+
     `;
 
     $head.insertBefore($style, null);
