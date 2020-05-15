@@ -19,6 +19,7 @@ const layerStart = (function () {
       }
 
       .layer-start.-inative{
+        
         display:none;
       }
 

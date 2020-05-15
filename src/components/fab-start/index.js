@@ -28,6 +28,8 @@ const fabStart = (function () {
 
       .fab.-inative {
         display: none;
+        transition: display 2s ease-in-out;
+        
       }
 
       
@@ -41,7 +43,9 @@ const fabStart = (function () {
     const $layerFab = document.querySelector(".layer-start");
 
     $fab.classList.add("-inative");
-    $layerFab.classList.add("-inative");
+    setInterval(() => {
+      $layerFab.classList.add("-inative");
+    }, 1200);
   };
   module.createFab = () => {
     module._style();
