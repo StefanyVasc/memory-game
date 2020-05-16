@@ -1,42 +1,23 @@
 const layerStart = (function () {
   const module = {};
 
-  module._style = () => {
-    const $head = document.querySelector("head");
-    const $style = document.createElement("style");
-
-    /* const $layer = document.querySelector("section");
-    $layer.classList.add("layer-start"); */
-
-    $style.textContent = `
-      .layer-start {
-        position: absolute;
-        top: 0;
-        opacity: 0.7; 
-        background-color: #3a4042; 
-        width: 100vw;
-        height: 100vh;
-      }
-
-      .layer-start.-inative{
-        
-        display:none;
-      }
-
-    `;
-
-    $head.insertBefore($style, null);
+  module.handleClick = ($component) => {
+    $component.remove();
   };
 
-  module.createLayer = () => {
-    module._style();
+  module.createLayer = (content) => {
+    const $transparencyLayerStart = transparencyLayer.createNewTransparencyLayer();
+    const $fabStart = fab.createNewFab(content);
     return `
-      <section class="layer-start"></section>
-
+      <div class="layer-start" onClick="layerStart.handleClick(this)">
+        ${$transparencyLayerStart}
+        ${$fabStart}
+      </div>
     `;
   };
 
   return {
-    createNewLayerStart: module.createLayer,
+    createLayerStart: module.createLayer,
+    handleClick: module.handleClick,
   };
 })();

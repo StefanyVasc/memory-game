@@ -1,4 +1,4 @@
-const fabStart = (function () {
+const fab = (function () {
   const module = {};
 
   module._style = () => {
@@ -9,11 +9,11 @@ const fabStart = (function () {
       .fab {
         width: 100px;
         height: 100px;
-        background-color: #ffdbd9;
+        background-color: #f25a70;
         border-radius: 50%;
         border: 2px solid #3a4042;
         outline: none;
-        color: #3a4042 ;
+        color: #fff ;
         font-family: 'Balsamiq Sans', sans-sarif;
         font-size: 1.05em;
         font-weight: bold;
@@ -25,40 +25,21 @@ const fabStart = (function () {
         cursor: pointer;
         box-shadow: 0px 4px 8px #3c4244;
       }
-
-      .fab.-inative {
-        display: none;
-        transition: display 2s ease-in-out;
-        
-      }
-
       
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.handleClick = () => {
-    const $fab = document.querySelector(".fab");
-    const $layerFab = document.querySelector(".layer-start");
-
-    $fab.classList.add("-inative");
-    setInterval(() => {
-      $layerFab.classList.add("-inative");
-    }, 1200);
-  };
-  module.createFab = () => {
+  module.createFab = (content) => {
     module._style();
 
     return `
-      <button class="fab" onClick="fabStart.fabHandleClick()">Start</button>
-      
-
+      <button class="fab">${content}</button>
     `;
   };
 
   return {
-    createNewFabStart: module.createFab,
-    fabHandleClick: module.handleClick,
+    createNewFab: module.createFab,
   };
 })();

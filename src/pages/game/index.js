@@ -8,11 +8,7 @@ o page que consome os outros arquivos */
   /* createMemoryCard é o return da IIFE do memoryCard */
 
   const $pointBar = pointBar.createNewBar();
-
-  /* const $fabButton = fabStart.createNewFabStart() */
-  const $fabStart = fabStart.createNewFabStart();
-
-  const $layerStart = layerStart.createNewLayerStart();
+  const $layerStart = layerStart.createLayerStart("Start");
 
   const $memoryCardFrontC = createMemoryCard({
     src: "img/icon-c.png",
@@ -45,7 +41,5 @@ o page que consome os outros arquivos */
 
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
-
   $root.insertAdjacentHTML("beforeend", $layerStart);
-  $root.insertAdjacentHTML("beforeend", $fabStart);
 })();
