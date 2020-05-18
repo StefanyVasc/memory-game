@@ -25,6 +25,11 @@ const fab = (function () {
         cursor: pointer;
         box-shadow: 0px 4px 8px #3c4244;
       }
+
+      .fab.-disable { 
+        opacity: 0;
+        transition: opacity 200ms linear; 
+      }
       
     `;
 

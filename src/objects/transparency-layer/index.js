@@ -6,12 +6,18 @@ const transparencyLayer = (function () {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .layer-start {
+      .transparency-layer {
         position: absolute;
         top: 0; 
         background-color: rgba(58,64,66, 0.5); 
         width: 100vw;
         height: 100vh;
+      }
+
+      .transparency-layer.-disable{
+        opacity: 0;
+        transition: opacity 300ms 200ms linear; 
+
       }
     `;
 
@@ -21,7 +27,7 @@ const transparencyLayer = (function () {
   module.createLayer = () => {
     module._style();
     return `
-      <div class="layer-start"></div>
+      <div class="transparency-layer"></div>
     `;
   };
 
