@@ -27,6 +27,8 @@ const fab = (function () {
       }
 
       .fab.-disable { 
+        transform: scale(2);
+        transform-origin: right;
         opacity: 0;
         transition: opacity 200ms linear; 
       }
