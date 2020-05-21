@@ -24,13 +24,14 @@ const fab = (function () {
         transform: translateX(-50%);
         cursor: pointer;
         box-shadow: 0px 4px 8px #3c4244;
+        transition: opacity 200ms linear, transform 200ms linear; 
+
       }
 
       .fab.-disable { 
-        transform: scale(2);
-        transform-origin: right;
         opacity: 0;
-        transition: opacity 200ms linear; 
+        transform: translate(-50%, -35%) scale(2);
+        
       }
       
     `;
