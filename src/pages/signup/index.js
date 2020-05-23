@@ -1,6 +1,8 @@
 (function () {
   const $root = document.querySelector("#root");
-  const $flatButton = flatButton.createNewFlatBtn();
+  const $flatButtonLogin = flatButton.createNewFlatBtn();
+  const $flatButtonSignUp = flatButton.createNewFlatBtn();
 
-  $root.insertAdjacentHTML("beforeend", $flatButton);
+  $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
+  $root.insertAdjacentHTML("beforeend", $flatButtonSignUp);
 })();
