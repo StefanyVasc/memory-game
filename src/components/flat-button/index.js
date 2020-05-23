@@ -18,16 +18,21 @@ const flatButton = (function () {
         text-transform: uppercase;
         
       }
+
+      .flat-button.-active { 
+        background-color: #f25a70; 
+        color: #ffffff;
+      }
     
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createFlat = (content) => {
+  module.createFlat = ({ content, variationClass }) => {
     module._style();
     return `
-      <button class="flat-button">${content}</button>
+      <button class="flat-button ${variationClass}">${content}</button>
     `;
   };
 
