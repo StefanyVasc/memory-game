@@ -7,7 +7,10 @@
 
   const $collabLogo = collabLogo.createLogo();
 
+  const $collabTitle = collabTitle.createTitle("welcome");
+
   $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
   $root.insertAdjacentHTML("beforeend", $flatButtonSignUp);
   $root.insertAdjacentHTML("beforeend", $collabLogo);
+  $root.insertAdjacentHTML("beforeend", $collabTitle);
 })();
