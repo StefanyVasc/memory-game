@@ -39,7 +39,7 @@ const pointBar = (function () {
   };
 
   return {
-    createNewBar: module.createBar,
+    render: module.createBar,
     scoreBar: module.scoreBarCount,
   };
 })();

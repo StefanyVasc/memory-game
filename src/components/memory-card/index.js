@@ -135,7 +135,7 @@ const memoryCard = (function () {
   };
 
   return {
-    createNewCard: module.createCard,
+    render: module.createCard,
     handleClick: module.handleClick,
   };
 })();

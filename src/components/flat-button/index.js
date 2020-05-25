@@ -35,6 +35,6 @@ const flatButton = (function () {
   };
 
   return {
-    createNewFlatBtn: module.createFlat,
+    render: module.createFlat,
   };
 })();

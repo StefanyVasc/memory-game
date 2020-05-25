@@ -26,7 +26,7 @@ const layerStart = (function () {
   };
 
   return {
-    createLayerStart: module.createLayer,
+    render: module.createLayer,
     handleClick: module.handleClick,
     handleTransition: module.handleTransitionEnd,
   };

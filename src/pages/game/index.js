@@ -4,11 +4,11 @@ o page que consome os outros arquivos */
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
-  const createMemoryCard = memoryCard.createNewCard();
+  const createMemoryCard = memoryCard.render();
   /* createMemoryCard é o return da IIFE do memoryCard */
 
-  const $pointBar = pointBar.createNewBar();
-  const $layerStart = layerStart.createLayerStart("Start");
+  const $pointBar = pointBar.render();
+  const $layerStart = layerStart.render("Start");
 
   const $memoryCardFrontC = createMemoryCard({
     src: "img/icon-c.png",
