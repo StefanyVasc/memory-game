@@ -29,6 +29,6 @@ const collabTitle = (function () {
   };
 
   return {
-    createTitle: module.createTitle,
+    render: module.createTitle,
   };
 })();
