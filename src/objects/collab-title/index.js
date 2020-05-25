@@ -7,22 +7,12 @@ const collabTitle = (function () {
 
     $style.textContent = `
 
-      .collabTitle{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%);
-        font-family: inherit;
+      .collab-title{
         font-size: 24px;
         font-weight: bold;
-        line-height: 1.13;
         letter-spacing: 0.58px;
-        text-align: center;
         color: #f25a70;
-        width: 146px;
-        height: 27px;
-        text-transform: uppercase;
-        
+        text-transform: uppercase;   
       }
       
     `;
@@ -34,7 +24,7 @@ const collabTitle = (function () {
     module._style();
 
     return `
-      <h1 class="collabTitle"> ${content}</h1>
+      <h1 class="collab-title"> ${content}</h1>
     `;
   };
 

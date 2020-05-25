@@ -18,6 +18,7 @@ const flatButton = (function () {
         width: 50%;
         height: 176px;
         text-transform: uppercase;
+        overflow: hidden;
       }
     `;
 
