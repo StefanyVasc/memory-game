@@ -18,7 +18,10 @@ const flatButton = (function () {
         width: 50%;
         height: 176px;
         text-transform: uppercase;
-        overflow: hidden;
+      }
+
+      .flat-button-${module._id} > p{
+        transform: translateY(-50%);
       }
     `;
 
@@ -30,7 +33,7 @@ const flatButton = (function () {
     module._style(active);
 
     return `
-      <button class="flat-button-${module._id}">${content}</button>
+      <button class="flat-button-${module._id}"> <p>${content}</p> </button>
     `;
   };
 
