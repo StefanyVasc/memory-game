@@ -12,7 +12,7 @@
   const $fieldSignUp = formField.render({
     content: "Username",
     placeholder: "Name-example",
-    type: "text",
+    type: "email",
   });
 
   $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
