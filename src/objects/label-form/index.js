@@ -11,6 +11,7 @@ const labelForm = (function () {
         color: #3a4042;
         opacity:0.5;
         
+        
       }
     
     `;
