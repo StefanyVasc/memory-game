@@ -21,6 +21,8 @@
   const $labelConfirmPassword = labelForm.render("Confirm password");
   const $inputConfirmPassword = inputForm.render("***********");
 
+  const $submitSignUp = submitForm.render("submit");
+
   $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
   $root.insertAdjacentHTML("beforeend", $flatButtonSignUp);
 
@@ -37,4 +39,6 @@
 
   $root.insertAdjacentHTML("beforeend", $labelConfirmPassword);
   $root.insertAdjacentHTML("beforeend", $inputConfirmPassword);
+  3;
+  $root.insertAdjacentHTML("beforeend", $submitSignUp);
 })();
