@@ -10,19 +10,23 @@ const flatButton = (function () {
     $style.textContent = `
 
       .flat-button-${module._id}{
-        float: left;
         background-color: ${active ? "#f25a70" : "#eae6da"};
-        color: ${active ? "#fff" : "#fffcee"}; 
-        font-size: 24px;
-        font-weight: bold; 
         width: 50%;
         height: 176px;
+        font-size: 24px;
+        font-weight: bold;
+        color: ${active ? "#fff" : "#fffcee"};
         text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        display: inline-flex;
+        float: left;
+        padding-top:60px;
+        box-sizing: border-box;
+        justify-content: center;
+
       }
 
-      .flat-button-${module._id} > p{
-        transform: translateY(-50%);
-      }
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
@@ -33,7 +37,7 @@ const flatButton = (function () {
     module._style(active);
 
     return `
-      <button class="flat-button-${module._id}"> <p>${content}</p> </button>
+      <button class="flat-button-${module._id}"> ${content} </button>
     `;
   };
 

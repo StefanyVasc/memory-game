@@ -9,15 +9,14 @@
 
   const $logoWrapper = logoWrapper.render($collabLogo, $collabTitle);
 
-  const $fieldSignUp = formField.render({
-    content: "Username",
-    placeholder: "Name-example",
-    type: "email",
-  });
+  const $labelEmail = labelForm.render("Email");
+  const $inputEmail = inputForm.render("example@email.com");
 
   $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
   $root.insertAdjacentHTML("beforeend", $flatButtonSignUp);
 
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
-  $root.insertAdjacentHTML("beforeend", $fieldSignUp);
+
+  $root.insertAdjacentHTML("beforeend", $labelEmail);
+  $root.insertAdjacentHTML("beforeend", $inputEmail);
 })();
