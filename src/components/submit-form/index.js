@@ -7,14 +7,12 @@ const submitForm = (function () {
 
     $style.textContent = `
       .submit-form{
-        width: 302px;
+        width: 100%;
         height: 48px;
         border-radius: 24px;
         background-color: #f25a70;
         font-size: 14px;
         text-transform: uppercase;
-        letter-spacing: 0.34px;
-        line-height: 15px;
         color: #fff;
         font-weight: bold;
         cursor: pointer;
@@ -29,7 +27,7 @@ const submitForm = (function () {
     module._style();
 
     return `
-      <input type="submit" class="submit-form" value= " ${content}"> </input>
+      <input type="submit" class="submit-form" value= "${content}"> </input>
     `;
   };
 

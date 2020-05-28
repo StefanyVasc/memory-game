@@ -17,6 +17,14 @@ const inputForm = (function () {
         padding-top: 12px
 
       }
+
+      .input-form + .label-form{
+        margin-top: 30px;
+      }
+
+      .input-form + .submit-form { 
+        margin-top: 45px;
+      }
     
     `;
 

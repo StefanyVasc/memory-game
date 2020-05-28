@@ -1,4 +1,4 @@
-const fab = (function () {
+const fabButton = (function () {
   const module = {};
 
   module._style = () => {
@@ -6,7 +6,7 @@ const fab = (function () {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .fab {
+      .fab-button {
         width: 100px;
         height: 100px;
         background-color: #f25a70;
@@ -28,7 +28,7 @@ const fab = (function () {
 
       }
 
-      .fab.-disable { 
+      .fab-button.-disable { 
         opacity: 0;
         transform: translate(-50%, -35%) scale(2);
         
@@ -43,7 +43,7 @@ const fab = (function () {
     module._style();
 
     return `
-      <button class="fab">${content}</button>
+      <button class="fab-button">${content}</button>
     `;
   };
 

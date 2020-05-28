@@ -7,12 +7,13 @@ const labelForm = (function () {
 
     $style.textContent = `
       .label-form{
+        display: block;
         font-size: 16px;
         color: #3a4042;
         opacity:0.5;
-        
-        
+  
       }
+      
     
     `;
 
