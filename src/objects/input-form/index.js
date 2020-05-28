@@ -41,7 +41,9 @@ const inputForm = (function () {
     module._style();
 
     return `
-    <input class="input-form" type="email" id="" placeholder="${hint}" required="" ></input> 
+      <input class="input-form" type="email" id="" placeholder="${
+        hint || ""
+      }" required=""></input> 
     `;
   };
 
