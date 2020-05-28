@@ -25,17 +25,23 @@ const inputForm = (function () {
       .input-form + .submit-form { 
         margin-top: 45px;
       }
+
+      .input-form::placeholder {
+        font-weight: normal;
+        color: #f25a70;
+        opacity: 0.5;
+      }
     
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createInput = (placeholder) => {
+  module.createInput = (hint) => {
     module._style();
 
     return `
-    <input class="input-form" type="email" id="" placeholder="${placeholder}" required="" ></input> 
+    <input class="input-form" type="email" id="" placeholder="${hint}" required="" ></input> 
     `;
   };
 
