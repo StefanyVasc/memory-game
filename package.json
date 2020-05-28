@@ -2,9 +2,9 @@
   "name": "memory-card",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
     "url": "https://github.com/StefanyVasc/memory-game/issues"
   },
   "homepage": "https://github.com/StefanyVasc/memory-game#readme",
-  "dependencies": {
-    "yup": "^0.29.1"
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
   }
 }
