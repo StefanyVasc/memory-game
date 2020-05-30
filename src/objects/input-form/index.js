@@ -37,13 +37,13 @@ const inputForm = (function () {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createInput = (hint) => {
+  module.createInput = ({ placeholder, type }) => {
     module._style();
 
     return `
-      <input class="input-form" type="email" id="" placeholder="${
-        hint || ""
-      }" required=""></input> 
+      <input class="input-form" type="${type}" id="" placeholder="${
+      placeholder || ""
+    }" required=""></input> 
     `;
   };
 
