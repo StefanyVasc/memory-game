@@ -29,9 +29,7 @@ const inputForm = (function () {
         opacity: 0.5;
       }
 
-      .input-form + .forget-password{
-        margin-top: 43px;
-      }
+      
       
     `;
 

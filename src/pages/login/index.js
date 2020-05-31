@@ -14,7 +14,6 @@
 
   $root.insertAdjacentHTML("beforeend", $flatButtonLogin);
   $root.insertAdjacentHTML("beforeend", $flatButtonSignUp);
-
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
   $root.insertAdjacentHTML("beforeend", $formLogin);
 })();

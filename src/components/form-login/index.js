@@ -27,9 +27,12 @@ const formLogin = (function () {
       placeholder: "**********",
     });
 
-    const $submitLogin = submitForm.render("Login");
+    const $linkForget = linkForget.render({
+      content: "Forget password?",
+      href: "#",
+    });
 
-    const $linkForget = forgetPassword.render("Forget password?");
+    const $submitLogin = submitForm.render("Login");
 
     return `
       ${$labelUsernameOrEmail + $inputUsernameOrEmail}
