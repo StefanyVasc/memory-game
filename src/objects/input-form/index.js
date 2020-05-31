@@ -42,7 +42,7 @@ const inputForm = (function () {
     module._style();
 
     return `
-      <input class="input-form" type="${type}" id="" placeholder="${
+      <input class="input-form" type="${type || "text"}" id="" placeholder="${
       placeholder || ""
     }" required=""></input> 
     `;
