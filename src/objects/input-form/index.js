@@ -22,16 +22,17 @@ const inputForm = (function () {
         margin-top: 30px;
       }
 
-      .input-form + .submit-form { 
-        margin-top: 45px;
-      }
-
+      
       .input-form::placeholder {
         font-weight: normal;
         color: #f25a70;
         opacity: 0.5;
       }
-    
+
+      .input-form + .forget-password{
+        margin-top: 43px;
+      }
+      
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
