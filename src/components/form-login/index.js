@@ -31,12 +31,12 @@ const formLogin = (function () {
       content: "Forget password?",
       href: "#",
     });
-
+    const $eyePassword = eyePassword.render();
     const $submitLogin = submitForm.render("Login");
 
     return `
       ${$labelUsernameOrEmail + $inputUsernameOrEmail}
-      ${$labelPassword + $inputPassword}
+      ${$labelPassword + $inputPassword + $eyePassword}
       ${$linkForget}
       ${$submitLogin}
 

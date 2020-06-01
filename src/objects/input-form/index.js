@@ -29,8 +29,12 @@ const inputForm = (function () {
         opacity: 0.5;
       }
 
-      
-      
+      .input-form + .eye-password {
+        margin-top: -10%;
+        margin-left: 90%;
+      }
+
+
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
