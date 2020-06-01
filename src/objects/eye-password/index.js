@@ -2,7 +2,15 @@ const eyePassword = (function () {
   const module = {};
 
   module.handleClick = ($component) => {
-    console.log($component);
+    const $tipo = document.querySelector("input[type='password'");
+
+    $component.addEventListener("mouseup", function () {
+      $tipo.type = "password";
+    });
+
+    $component.addEventListener("mousedown", function () {
+      $tipo.type = "text";
+    });
   };
 
   module._style = () => {
@@ -17,6 +25,7 @@ const eyePassword = (function () {
         height: 14.3px;
         object-fit: contain;
         opacity: 0.7;
+        cursor: pointer;
       }
 
       
