@@ -6,10 +6,12 @@ const eyePassword = (function () {
 
     $component.addEventListener("mouseup", function () {
       $tipo.type = "password";
+      $component.classList.remove("-active");
     });
 
     $component.addEventListener("mousedown", function () {
       $tipo.type = "text";
+      $component.classList.add("-active");
     });
   };
 
@@ -24,8 +26,12 @@ const eyePassword = (function () {
         width: 23px;
         height: 14.3px;
         object-fit: contain;
-        opacity: 0.7;
+        opacity: 0.3;
         cursor: pointer;
+      }
+
+      .eye-password.-active {
+        opacity: 1;
       }
 
       
