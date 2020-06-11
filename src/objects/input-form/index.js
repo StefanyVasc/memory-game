@@ -29,6 +29,9 @@ const inputForm = (function () {
         opacity: 0.5;
       }
 
+      .input-form + .submit-form{
+        margin-top: 70px;
+      }
       
 
     `;

@@ -1,6 +1,6 @@
 /* tudo que está dentro do page não pode ser acessado do lado de fora... 
 o page que consome os outros arquivos */
-(function () {
+const game = function () {
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
@@ -42,4 +42,4 @@ o page que consome os outros arquivos */
   $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
   $root.insertAdjacentHTML("beforeend", $layerStart);
-})();
+};

@@ -23,15 +23,21 @@ const submitForm = (function () {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createSubmit = (content) => {
+  module.handleClick = (event, path) => {
+    event.preventDefault();
+    window.location.hash = `#/${path}`;
+  };
+
+  module.createSubmit = ({ content = "", path = "" }) => {
     module._style();
 
     return `
-      <input type="submit" class="submit-form" value= "${content}"> </input>
+      <input type="submit" class="submit-form" value= "${content}" onClick="submitForm.handleClick(event, '${path}')">
     `;
   };
 
   return {
     render: module.createSubmit,
+    handleClick: module.handleClick,
   };
 })();

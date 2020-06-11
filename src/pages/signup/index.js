@@ -1,8 +1,8 @@
-(function () {
+const signup = function () {
   const $root = document.querySelector("#root");
 
-  const $flatButtonLogin = flatButton.render("log in", false);
-  const $flatButtonSignUp = flatButton.render("sign up", true);
+  const $flatButtonLogin = flatButton.render("log in", false, "login");
+  const $flatButtonSignUp = flatButton.render("sign up", true, "signup");
 
   const $collabLogo = collabLogo.render();
   const $collabTitle = collabTitle.render("welcome!");
@@ -17,4 +17,4 @@
   $root.insertAdjacentHTML("beforeend", $logoWrapper);
 
   $root.insertAdjacentHTML("beforeend", $formSignUp);
-})();
+};

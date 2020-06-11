@@ -8,40 +8,40 @@ const flatButton = (function () {
     const $style = document.createElement("style");
 
     $style.textContent = `
-
-      .flat-button-${module._id}{
+      .flat-button-${module._id} {
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
         background-color: ${active ? "#f25a70" : "#eae6da"};
-        width: 50%;
-        height: 176px;
+        color: ${active ? "#fff" : "#fffcee"};
         font-size: 24px;
         font-weight: bold;
-        color: ${active ? "#fff" : "#fffcee"};
+        width: 50%;
+        padding-top: 60px;
+        height: 176px;
         text-transform: uppercase;
-        text-decoration: none;
-        text-align: center;
-        display: inline-flex;
-        float: left;
-        padding-top:60px;
-        box-sizing: border-box;
-        justify-content: center;
-
+        cursor: pointer;
       }
-
     `;
-
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createFlat = (content = "", active = false) => {
+  module.handleClick = (path) => {
+    location.hash = `#/${path}`;
+  };
+
+  module.createFlatButton = (content = "", active = false, path = "") => {
     module._id++;
     module._style(active);
 
-    return `
-      <button class="flat-button-${module._id}"> ${content} </button>
-    `;
+    return `<button 
+              class="flat-button-${module._id}"
+              onclick="flatButton.handleClick('${path}')"
+              >${content}</button>`;
   };
 
   return {
-    render: module.createFlat,
+    render: module.createFlatButton,
+    handleClick: module.handleClick,
   };
 })();

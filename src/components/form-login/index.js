@@ -33,7 +33,7 @@ const formLogin = (function () {
       href: "#",
     });
     const $eyePassword = eyePassword.render({ attrFor: "password" });
-    const $submitLogin = submitForm.render("Login");
+    const $submitLogin = submitForm.render({ content: "Login", path: "game" });
 
     return `
       ${$labelUsernameOrEmail + $inputUsernameOrEmail}

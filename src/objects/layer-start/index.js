@@ -15,7 +15,7 @@ const layerStart = (function () {
 
   module.createLayer = (content) => {
     const $transparencyLayerStart = transparencyLayer.createNewTransparencyLayer();
-    const $fabStart = fab.createNewFab(content);
+    const $fabStart = fabButton.createNewFab(content);
     return `
       <div class="layer-start" onClick="layerStart.handleClick(this)" 
       onTransitionEnd="layerStart.handleTransition(event, this)">

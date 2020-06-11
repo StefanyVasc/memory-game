@@ -40,7 +40,10 @@ const formSignUp = (function () {
       type: "password",
     });
 
-    const $submitSignUp = submitForm.render("submit");
+    const $submitSignUp = submitForm.render({
+      content: "submit",
+      path: "login",
+    });
 
     return `
       ${$labelUsername + $inputUsername}
