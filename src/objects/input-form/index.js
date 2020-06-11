@@ -29,24 +29,24 @@ const inputForm = (function () {
         opacity: 0.5;
       }
 
-      .input-form + .eye-password {
-        margin-top: -10%;
-        margin-left: 90%;
-      }
-
+      
 
     `;
 
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createInput = ({ placeholder, type }) => {
+  module.createInput = ({ placeholder, type, id }) => {
     module._style();
 
     return `
-      <input class="input-form" type="${type || "text"}" id="" placeholder="${
-      placeholder || ""
-    }" required=""></input> 
+      <input 
+        class="input-form" 
+        type="${type || "text"}" 
+        id="${id || ""}" 
+        placeholder="${placeholder || ""}" 
+        required="">
+      </input> 
     `;
   };
 

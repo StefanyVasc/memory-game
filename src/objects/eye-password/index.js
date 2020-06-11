@@ -1,18 +1,18 @@
 const eyePassword = (function () {
   const module = {};
 
-  module.handleClick = ($component) => {
-    const $tipo = document.querySelector("input[type='password'");
+  module.handleClick = function () {
+    const attrFor = this.getAttribute("for");
+    const $inputType = document.querySelector(`#${attrFor}`);
 
-    $component.addEventListener("mouseup", function () {
-      $tipo.type = "password";
-      $component.classList.remove("-active");
-    });
+    if ($inputType.getAttribute("type") === "password") {
+      this.classList.add("-active");
+      $inputType.setAttribute("type", "text");
+    } else {
+      this.classList.remove("-active");
 
-    $component.addEventListener("mousedown", function () {
-      $tipo.type = "text";
-      $component.classList.add("-active");
-    });
+      $inputType.setAttribute("type", "password");
+    }
   };
 
   module._style = () => {
@@ -22,12 +22,18 @@ const eyePassword = (function () {
     $style.textContent = `
       .eye-password {
         display: block;
-        position: relative;
-        width: 23px;
-        height: 14.3px;
-        object-fit: contain;
-        opacity: 0.3;
-        cursor: pointer;
+        text-indent: -9999px;
+        background-image: url(/img/hidden.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 24px;
+        height: 15px;
+        cursor: pointer; 
+        opacity: 0.5;
+        transition: opacity 200ms linear;
+        float: right;
+        transform: translateY(-200%);
+        margin-right: 4px;
       }
 
       .eye-password.-active {
@@ -39,10 +45,15 @@ const eyePassword = (function () {
     $head.insertAdjacentElement("beforeend", $style);
   };
 
-  module.createEyePassword = () => {
+  module.createEyePassword = ({ attrFor }) => {
     module._style();
     return `
-      <img src="img/hidden.png" class="eye-password" onClick="eyePassword.handleClick(this)" />
+      <label  
+        class="eye-password" 
+        onClick="eyePassword.handleClick.bind(this)()"
+        for="${attrFor || ""}"
+        >Mostrar senha
+        </label>
     `;
   };
   return {

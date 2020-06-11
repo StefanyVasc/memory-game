@@ -24,14 +24,15 @@ const formLogin = (function () {
     const $labelPassword = labelForm.render("Password");
     const $inputPassword = inputForm.render({
       type: "password",
-      placeholder: "**********",
+      placeholder: "Digite aqui sua senha",
+      id: "password",
     });
 
     const $linkForget = linkForget.render({
       content: "Forget password?",
       href: "#",
     });
-    const $eyePassword = eyePassword.render();
+    const $eyePassword = eyePassword.render({ attrFor: "password" });
     const $submitLogin = submitForm.render("Login");
 
     return `
