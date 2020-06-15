@@ -28,6 +28,7 @@ const flatButton = (function () {
 
   module.handleClick = (path) => {
     location.hash = `#/${path}`;
+    location.reload(true);
   };
 
   module.createFlatButton = (content = "", active = false, path = "") => {
