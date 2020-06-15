@@ -25,7 +25,7 @@ const submitForm = (function () {
 
   module.handleClick = (event, path) => {
     event.preventDefault();
-    window.location.hash = `#/${path}`;
+    location.hash = `#/${path}`;
     location.reload(true);
   };
 
