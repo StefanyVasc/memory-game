@@ -18,7 +18,7 @@ const formSignUp = (function () {
   module._children = () => {
     const $labelUsername = labelForm.render("Username");
     const $inputUsername = inputForm.render({
-      placeholder: "Name-Example",
+      placeholder: "your username here",
       type: "text",
     });
 
@@ -26,17 +26,18 @@ const formSignUp = (function () {
     const $inputEmail = inputForm.render({
       placeholder: "example@email.com",
       type: "email",
+      id: "email",
     });
 
     const $labelPassword = labelForm.render("Password");
     const $inputPassword = inputForm.render({
-      placeholder: "***********",
+      placeholder: "password must be at least 8 digits",
       type: "password",
     });
 
     const $labelConfirmPassword = labelForm.render("Confirm password");
     const $inputConfirmPassword = inputForm.render({
-      placeholder: "***********",
+      placeholder: "password must be at least 8 digits",
       type: "password",
     });
 

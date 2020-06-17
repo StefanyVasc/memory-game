@@ -7,17 +7,23 @@ const pointBar = (function () {
 
     $style.textContent = `
       .point-bar{
-        height: 40px;
-        background-color: #3a4042;
+        font-size: 18px;
         text-align: center;
         font-family: 'Balsamiq Sans', sans-sarif;
       }
 
       .point-bar > .counter{
-        color: #FFF;
+        color: #f25a70;
         line-height: 40px;
         font-weight: bold;
 
+      }
+
+      .point-bar > .plays { 
+        margin-left: 20px;
+        color: #FFF;
+        line-height: 40px;
+        font-weight: bold;
       }
     `;
 
@@ -26,15 +32,19 @@ const pointBar = (function () {
 
   module.scoreBarCount = () => {
     const $counter = document.querySelector(".point-bar > .counter");
-    $counter.textContent = store.score;
+    const $counterPlays = document.querySelector(".point-bar > .plays");
+
+    $counter.textContent = `Pontos: ${store.score}`;
+    $counterPlays.textContent = `Jogadas: ${store.plays}`;
   };
 
   module.createBar = () => {
     module._style();
     return `
-      <header class="point-bar">
-        <span class="counter">0</span>
-      </header>
+      <div class="point-bar">
+        <span class="counter">Pontos: 0</span>
+        <span class="plays">Jogadas: 0</span>
+      </div>
     `;
   };
 

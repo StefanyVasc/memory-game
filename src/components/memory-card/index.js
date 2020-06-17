@@ -92,6 +92,7 @@ const memoryCard = (function () {
     if (!$component.classList.contains("-active")) {
       module._activeMemoryCard($component);
       module._checkingIfRight();
+      modalWin.showModal();
       pointBar.scoreBar();
     }
   };
@@ -117,12 +118,14 @@ const memoryCard = (function () {
 
       if (firstCard === secondCard) {
         store.score++;
+        store.plays++;
 
         $activeMemoryCards.forEach(($memoryCard) => {
           $memoryCard.classList.add("-score");
           $memoryCard.classList.remove("-active");
         });
       } else {
+        store.plays++;
         setTimeout(() => {
           $activeMemoryCards.forEach(($memoryCard) => {
             $memoryCard.classList.remove("-active");

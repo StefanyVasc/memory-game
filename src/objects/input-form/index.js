@@ -18,10 +18,6 @@ const inputForm = (function () {
 
       }
 
-      .input-form + .label-form{
-        margin-top: 30px;
-      }
-
       
       .input-form::placeholder {
         font-weight: normal;
@@ -32,6 +28,7 @@ const inputForm = (function () {
       .input-form + .submit-form{
         margin-top: 70px;
       }
+
       
 
     `;
@@ -48,7 +45,7 @@ const inputForm = (function () {
         type="${type || "text"}" 
         id="${id || ""}" 
         placeholder="${placeholder || ""}" 
-        required="">
+        required=""
       </input> 
     `;
   };

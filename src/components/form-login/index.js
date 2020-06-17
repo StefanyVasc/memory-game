@@ -17,16 +17,19 @@ const formLogin = (function () {
   module._children = () => {
     const $labelUsernameOrEmail = labelForm.render("Username ou e-mail");
     const $inputUsernameOrEmail = inputForm.render({
-      type: "text",
+      type: "email",
       placeholder: "example@email.com",
+      id: "email",
     });
 
+    const $feedbackErrorInputEmail = feedbackInputs.render("email");
     const $labelPassword = labelForm.render("Password");
     const $inputPassword = inputForm.render({
       type: "password",
-      placeholder: "Digite aqui sua senha",
+      placeholder: "password must be at least 8 digits",
       id: "password",
     });
+    const $feedbackErroInputPassword = feedbackInputs.render("password");
 
     const $linkForget = linkForget.render({
       content: "Forget password?",
@@ -36,8 +39,15 @@ const formLogin = (function () {
     const $submitLogin = submitForm.render({ content: "Login", path: "game" });
 
     return `
-      ${$labelUsernameOrEmail + $inputUsernameOrEmail}
-      ${$labelPassword + $inputPassword + $eyePassword}
+      ${
+        $labelUsernameOrEmail + $inputUsernameOrEmail + $feedbackErrorInputEmail
+      }
+      ${
+        $labelPassword +
+        $inputPassword +
+        $eyePassword +
+        $feedbackErroInputPassword
+      }
       ${$linkForget}
       ${$submitLogin}
 

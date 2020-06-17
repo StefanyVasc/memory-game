@@ -8,4 +8,8 @@
   paths["#/404"] = page404;
 
   paths[hash] ? paths[hash]() : paths["#/404"]();
+
+  window.addEventListener("hashchange", () => {
+    location.reload();
+  });
 })();
