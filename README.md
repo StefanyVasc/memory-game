@@ -51,7 +51,7 @@
 
 
 ## :clipboard: Description
-Describe your application and what you learning with it. 😃
+It is a typical memory game where the objective is to find the same pairs. It has a signup and login system that is not yet fully implemented, with the backend missing. The entire project was done with Javascript vanilla.
 
 ## :rocket: Getting Started
 
